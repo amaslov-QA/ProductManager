@@ -58,6 +58,18 @@ class ProductManagerTest {
         Product[] actual = manager.searchBy(textForSearch);
         assertArrayEquals(expected, actual);
     }
+    @Test
+    void shouldSearchByAuthorTwo() {
+        String textForSearch = "King";
+
+        manager.add(stalker2);
+        manager.add(it2);
+        manager.add(it);
+
+        Product[] expected = new Product[]{it2,it};
+        Product[] actual = manager.searchBy(textForSearch);
+        assertArrayEquals(expected, actual);
+    }
 
     @Test
     void shouldSearchByName() {
